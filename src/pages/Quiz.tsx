@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Timer } from "../components/Timer";
 import Question from "../components/Question";
 import { questions } from "../../Questions.json";
-import { saveQuizResult, getQuizHistory } from "../db";
+import { saveQuizResult} from "../db";
 import { useNavigate } from "react-router-dom";
 
 export interface QuizHistoryEntry {
@@ -18,21 +18,11 @@ const Quiz = () => {
   const [userAnswer, setUserAnswer] = useState("");
   const [isTimerUp, setIsTimerUp] = useState(false);
   const [score, setScore] = useState(0);
-  const [quizHistory, setQuizHistory] = useState<QuizHistoryEntry[]>([]);
   const [userAnswers, setUserAnswers] = useState<string[]>(
     new Array(questions.length).fill("")
   );
 
   const navigate = useNavigate();
-
-  // Fetch quiz history when the component mounts
-  useEffect(() => {
-    const fetchHistory = async () => {
-      const history = await getQuizHistory();
-      setQuizHistory(history);
-    };
-    fetchHistory();
-  }, []);
 
   // Handle answer selection
   const handleAnswerSelect = (answer: string) => {
