@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 const features = [
   "Engaging questions & instant feedback",
-  "Different difficulty levels",
-  "Track your progress over time",
-  "Compete with friends & leaderboard",
+  "Review past quiz attempts & improve",
+  "Track your progress with detailed history",
+  "Test your knowledge across multiple topics",
 ];
 
 const Home = () => {

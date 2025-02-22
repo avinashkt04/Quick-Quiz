@@ -17,7 +17,7 @@ const Instruction = () => {
         <div className="text-lg mt-4">
           <ol className="list-disc list-inside">
             <li>
-              <strong>Time:</strong> You will have <strong>15 seconds</strong>{" "}
+              <strong>Time:</strong> You will have <strong>30 seconds</strong>{" "}
               to answer each question.
             </li>
             <li>
